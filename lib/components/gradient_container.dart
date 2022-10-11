@@ -19,6 +19,17 @@ import 'package:uikit/utils/colors.dart';
 /// )
 /// ```
 ///
+/// /// ```dart
+/// GradientContainer(
+///   child: Text("Gradient Container")
+///   padding: const EdgeInsets.all(8.0),
+///   begin: begin,
+///   end: end,
+///   borderRadius: BorderRadius.all(Radius.circular(10)),
+///   padding: EdgeInsets.all(10),
+/// )
+/// ```
+///
 class GradientContainer extends StatelessWidget {
   /// The [child] contained by the container.
   final Widget child;
