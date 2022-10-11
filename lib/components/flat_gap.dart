@@ -13,6 +13,13 @@ enum GapType {
 
 /// A gap class that uses padding to create a empty component
 /// with fixed horizontal or vertical gap. The gap unit [size] is in dp.
+///
+///```dart
+/// FlatGap(
+///   size: 10,
+///   gapType: GapType.vertical,
+/// )
+///```
 class FlatGap extends StatelessWidget {
   final double size;
   final GapType gapType;
