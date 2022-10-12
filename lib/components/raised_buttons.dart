@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nice_buttons/nice_buttons.dart';
-import 'package:uikit/components/button_type.dart';
+import 'package:uikit/buttons/button_type.dart';
 import 'package:uikit/utils/colors.dart';
 import 'package:uikit/utils/screen_size.dart';
 import 'package:uikit/utils/settings.dart';

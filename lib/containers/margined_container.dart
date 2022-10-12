@@ -2,10 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:uikit/utils/screen_size.dart';
 import 'package:uikit/utils/settings.dart';
 
-/// A widget that creates a margined container in percentage accroding to the provided
-/// margin direction. The size will be treated as percentage.
+/// A widget that creates a margined container in percentage according
+/// to the provided size and direction. The size will be treated in
+/// percentage.
+///
+/// To specify vertical margin use [verticalPercentage]
+/// and to specify horizontal margin use [horizontalPercentage].
+/// [child] can be any valid flutter widget. There is no
+/// way to specify only left or top margins alone. You must
+/// use in combinations, (top and bottom) or (left and right).
+///
+///  ```dart
+/// MarginedContainer(
+///   child: Text("Margined Container")
+///   verticalPercentage: 10,
+///   horizontalPercentage: 10,
+/// )
+/// ```
 class MarginedContainer extends StatelessWidget {
+  /// The vertical margin values in percentage.
   final double verticalPercentage;
+
+  /// The horizontal margin values in percentage.
   final double horizontalPercentage;
   final Widget child;
 
