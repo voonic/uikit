@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:nice_buttons/nice_buttons.dart';
 import 'package:uikit/buttons/button_type.dart';
+import 'package:uikit/buttons/raised_buttons.dart';
 import 'package:uikit/utils/colors.dart';
 import 'package:uikit/utils/screen_size.dart';
 import 'package:uikit/utils/settings.dart';
 
 /// A widget that creates outlined rounded pill buttons.
-/// By default the colos is primary. Outline buttons only have
+/// By default the color is primary. Outline buttons only have
 /// borders and transparent background. Outline buttons takes
 /// full width of the parent always.
 ///
 /// This button uses [nice_buttons](https://pub.dev/packages/nice_buttons)
 /// package from pub.dev. This button package is 3d button library.
+///
+/// See also:
+///
+/// * [RaisedButtons] 3d buttons with background.
 ///
 /// ```dart
 /// OutlineButtons(
