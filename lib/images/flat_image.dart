@@ -17,10 +17,10 @@ class FlatImage extends StatelessWidget {
   /// The name of the image that needs to be shown.
   final String name;
 
-  /// The width of the image.
+  /// The width of the image in dp.
   final double width;
 
-  /// The height of the image.
+  /// The height of the image in dp.
   final double height;
 
   const FlatImage(

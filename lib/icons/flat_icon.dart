@@ -6,12 +6,22 @@ import 'package:uikit/utils/settings.dart';
 /// An icon class that can be used for showing icons in the screens.
 ///
 /// For tablet it automatically increases the size of the icon based on the
-/// tabletScaleFactor in settings.
+/// tabletScaleFactor in settings. By default it uses [baseFontSize] defined
+/// in the settings and the default color is the [colorDark] in settings.
+///
+/// ```dart
+/// FlatIcon(
+///   icon,
+///   color: iconColor,
+///   size: 20,
+/// ),
+/// ```
+///
 class FlatIcon extends StatelessWidget {
   /// The icon that needs to be shown.
   final IconData icon;
 
-  /// The size of the icon.
+  /// The size of the icon in dp.
   final double size;
 
   /// The color of the icon.

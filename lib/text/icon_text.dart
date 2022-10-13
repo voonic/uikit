@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uikit/others/flat_gap.dart';
 import 'package:uikit/utils/colors.dart';
 import 'package:uikit/utils/settings.dart';
-import '../icons/flat_icons.dart';
+import '../icons/flat_icon.dart';
 import 'flat_text.dart';
 
 /// A class that draws icons with text align together horizontally.
