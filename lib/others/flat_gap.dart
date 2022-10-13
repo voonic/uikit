@@ -20,6 +20,7 @@ enum GapType {
 ///   gapType: GapType.vertical,
 /// )
 ///```
+///
 class FlatGap extends StatelessWidget {
   final double size;
   final GapType gapType;

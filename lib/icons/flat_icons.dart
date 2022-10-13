@@ -3,13 +3,18 @@ import 'package:uikit/utils/colors.dart';
 import 'package:uikit/utils/screen_size.dart';
 import 'package:uikit/utils/settings.dart';
 
-/// A icon class that can be used for showing icons in the screens.
+/// An icon class that can be used for showing icons in the screens.
 ///
 /// For tablet it automatically increases the size of the icon based on the
 /// tabletScaleFactor in settings.
 class FlatIcon extends StatelessWidget {
+  /// The icon that needs to be shown.
   final IconData icon;
+
+  /// The size of the icon.
   final double size;
+
+  /// The color of the icon.
   final Color color;
 
   const FlatIcon(

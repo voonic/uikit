@@ -5,8 +5,10 @@ import 'package:uikit/utils/colors.dart';
 import 'package:uikit/utils/screen_size.dart';
 import 'package:uikit/utils/settings.dart';
 
-/// An image badge ui component that shows image with text in the header section.
-/// Image icon is assumed to be square thats why only height.
+/// An image badge component that shows image with text.
+/// It's typically used in the header section. Image icon
+/// is assumed to be square thats why only height.
+///
 class ImageBadge extends StatelessWidget {
   final double imageHeight;
   final String imageName;
