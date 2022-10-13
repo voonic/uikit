@@ -2,11 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:uikit/utils/screen_size.dart';
 import 'package:uikit/utils/settings.dart';
 
-/// A photo class that is custom image representation When any of the width or height param is 0,
-/// no size will be passed and image will be rendered as it is by its own size.
+/// An image class that is custom image widget for our project.
+/// When any of the width or height param is 0, no size will be
+/// passed and image will be rendered as it is by its own size.
+///
+/// If [width] and [height] is specified then the tabletScaleFactor
+/// is applied on tablets.
+///
+/// ```dart
+/// FlatImage(name: "logo.png", width: 300, height: 300),
+/// ```
+///
 class FlatImage extends StatelessWidget {
+  /// The name of the image that needs to be shown.
   final String name;
+
+  /// The width of the image.
   final double width;
+
+  /// The height of the image.
   final double height;
 
   const FlatImage(
