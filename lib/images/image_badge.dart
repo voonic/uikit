@@ -9,11 +9,24 @@ import 'package:uikit/utils/settings.dart';
 /// It's typically used in the header section. Image icon
 /// is assumed to be square thats why only height.
 ///
+/// ```dart
+/// ImageBadge(imageName: "star.png", value: "23"),
+/// ```
+///
 class ImageBadge extends StatelessWidget {
+  /// The height of the image, it considered as square.
   final double imageHeight;
+
+  /// The name of the image.
   final String imageName;
+
+  /// The text that needs to be shown.
   final String value;
+
+  /// The color of the text.
   final Color valueColor;
+
+  /// The size of the text in the dp.
   final double valueSize;
   const ImageBadge({
     Key? key,
