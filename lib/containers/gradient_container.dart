@@ -19,7 +19,7 @@ import 'package:uikit/utils/colors.dart';
 /// )
 /// ```
 ///
-/// /// ```dart
+/// ```dart
 /// GradientContainer(
 ///   child: Text("Gradient Container")
 ///   padding: const EdgeInsets.all(8.0),
