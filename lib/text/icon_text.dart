@@ -2,22 +2,48 @@ import 'package:flutter/material.dart';
 import 'package:uikit/components/flat_gap.dart';
 import 'package:uikit/utils/colors.dart';
 import 'package:uikit/utils/settings.dart';
-import 'flat_icons.dart';
+import '../components/flat_icons.dart';
 import 'flat_text.dart';
 
 /// A class that draws icons with text align together horizontally.
+///
 /// Specifying icon multiplier will multiply in the size factor.
 /// Icon color will change the color of the icon. color will change the
 /// text color.
-class IconsText extends StatelessWidget {
+///
+/// ```dart
+/// IconsText(
+///  icon: Icons.facebook_rounded,
+///  iconColor: colorPrimaryDark,
+///  iconMultiplier: 2,
+///  text: Strings.playFacebook,
+///  color: colorWhite,
+/// ),
+/// ```
+///
+class IconText extends StatelessWidget {
+  /// The icon that needs to be displayed.
   final IconData icon;
+
+  /// The icon multiplier.
+  ///
+  /// In case if you need same as as text size, leave it
+  /// to default as 1.0
   final double iconMultiplier;
+
+  /// The text that needs to be shown.
   final String text;
+
+  /// The size of the text.
   final double size;
+
+  /// The color of the text.
   final Color color;
+
+  /// The color of the icon.
   final Color iconColor;
 
-  const IconsText({
+  const IconText({
     Key? key,
     required this.icon,
     required this.text,

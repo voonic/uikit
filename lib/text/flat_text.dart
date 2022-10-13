@@ -3,15 +3,43 @@ import 'package:uikit/utils/colors.dart';
 import 'package:uikit/utils/screen_size.dart';
 import 'package:uikit/utils/settings.dart';
 
-/// A flat text class that can be used for showing normal text in the screens.
+/// A text class that can be used for showing normal text in the screens.
+/// The size of the text is responsive for tablets and will increase
+/// as per multiplication factor provided in the settings.
+///
 /// For tablet it automatically increases the size of the font based on the
-/// multiplication factor in settings.
+/// tablet multiplication factor in settings. The text can be made
+/// clickable by providing [onClick] function.
+///
+/// ```dart
+/// FlatText("This is my text")
+/// ```
+///
+/// ```dart
+/// FlatText(
+///   "whatever text",
+///   size: 12,
+///   color: colorWhite,
+/// )
+/// ```
+///
 class FlatText extends StatelessWidget {
+  /// The text that needs to be shown.
   final String text;
+
+  /// The size of the text.
   final double size;
+
+  /// The font weight of the text.
   final FontWeight fontWeight;
+
+  /// The color of the text.
   final Color color;
+
+  /// The alignment of the text.
   final TextAlign textAlign;
+
+  /// The click callback, if provided then the text becomes clickable.
   final VoidCallback? onClick;
 
   const FlatText(

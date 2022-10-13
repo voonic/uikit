@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uikit/components/flat_image.dart';
-import 'package:uikit/components/flat_text.dart';
+import 'package:uikit/text/flat_text.dart';
 import 'package:uikit/utils/colors.dart';
 import 'package:uikit/utils/screen_size.dart';
 import 'package:uikit/utils/settings.dart';
