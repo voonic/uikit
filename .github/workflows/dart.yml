@@ -36,12 +36,6 @@ jobs:
       # want to change this to 'flutter test'.
       - name: Generate doc
         run: dart doc
-        
-  # Deployment job
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: ../doc
