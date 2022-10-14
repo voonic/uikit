@@ -43,5 +43,5 @@ jobs:
     steps:
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: doc
+          folder: ../doc
           
