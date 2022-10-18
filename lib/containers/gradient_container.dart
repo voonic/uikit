@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:uikit/containers/normal_container.dart';
 import 'package:uikit/utils/colors.dart';
 
 /// A container widget that draws a gradient color background
-/// behind the child.
+/// behind the child, takes the full available space in the parent.
 ///
 /// These container are supposed to fill the parent widget in
 /// terms of width and height. By default it draws the vertical
 /// diagonal gradient (top left to bottom right). with the default
 /// colors [colorAccent] and [colorPrimary]. The direction of the
 /// gradient chan be changed by changing the [begin] and [end] params.
+/// But it only supports linear gradient as of now.
 ///
 /// ```dart
 /// GradientContainer(
@@ -73,17 +75,13 @@ class GradientContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
+    return NormalContainer(
       padding: padding,
-      decoration: BoxDecoration(
-        borderRadius: borderRadius,
-        gradient: LinearGradient(
-          begin: begin,
-          end: end,
-          colors: colors,
-        ),
+      borderRadius: borderRadius,
+      gradient: LinearGradient(
+        begin: begin,
+        end: end,
+        colors: colors,
       ),
       child: child,
     );
