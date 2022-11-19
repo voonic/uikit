@@ -6,8 +6,8 @@ import 'package:uikit/utils/settings.dart';
 /// A circular image component that shows rounded image.
 /// It's typically used for user Avatar. It uses radius to
 /// define the size. You can specify the border size to show
-/// border to the avatar. The borderSize is inclusive of the
-/// size provided.
+/// border to the avatar. The [borderSize] is inclusive of the
+/// [radius] provided.
 ///
 /// The image scales according to the scale factor specified in the
 /// settings.

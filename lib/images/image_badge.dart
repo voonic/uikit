@@ -6,8 +6,9 @@ import 'package:uikit/utils/screen_size.dart';
 import 'package:uikit/utils/settings.dart';
 
 /// An image badge component that shows image with text.
-/// It's typically used in the header section. Image icon
-/// is assumed to be square thats why only height.
+/// It cannot be used to render image from URL, only
+/// app embedded image. It's typically used in the header
+/// section. Image icon is assumed to be square thats why only height.
 ///
 /// ```dart
 /// ImageBadge(imageName: "star.png", value: "23"),

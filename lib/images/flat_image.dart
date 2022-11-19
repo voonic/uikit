@@ -3,9 +3,11 @@ import 'package:uikit/utils/screen_size.dart';
 import 'package:uikit/utils/settings.dart';
 
 /// An image class that is custom image widget for our project.
+/// It cannot be used to render image from URL, only
+/// app embedded image.
+///
 /// When any of the width or height param is 0, no size will be
 /// passed and image will be rendered as it is by its own size.
-///
 /// If [width] and [height] is specified then the tabletScaleFactor
 /// is applied on tablets.
 ///
