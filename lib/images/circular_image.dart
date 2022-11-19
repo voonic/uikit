@@ -35,6 +35,12 @@ class CircularImage extends StatelessWidget {
   /// This comes in handy when loading bigger image on tablets.
   final String tabletPrefix;
 
+  /// A callback that will be triggred when this UI is tapped.
+  ///
+  /// If this has not been provided then it will not listent for
+  /// gestures.
+  final VoidCallback? onTap;
+
   const CircularImage({
     super.key,
     this.borderColor = colorWhite,
@@ -42,16 +48,27 @@ class CircularImage extends StatelessWidget {
     required this.radius,
     required this.imageURL,
     this.tabletPrefix = "",
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
+    if (onTap == null) {
+      return _getInnerContent();
+    } else {
+      return GestureDetector(
+        onTap: onTap,
+        child: _getInnerContent(),
+      );
+    }
+  }
+
+  Widget _getInnerContent() {
     double finalRadius =
         ScreenSize.isTablet() ? tabletScaleFactor * radius : radius;
     double finalBordersize =
         ScreenSize.isTablet() ? tabletScaleFactor * borderSize : borderSize;
     String finalImageURL = "$imageURL$tabletPrefix";
-
     return CircleAvatar(
       backgroundColor: borderColor,
       radius: finalRadius,
