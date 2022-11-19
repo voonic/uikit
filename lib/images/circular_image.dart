@@ -29,12 +29,19 @@ class CircularImage extends StatelessWidget {
   /// The image that needs to shown to user.
   final String imageURL;
 
+  /// Table prefix string that will be suffixed in the url.
+  /// Default is empty so it does not suffix anything.
+  ///
+  /// This comes in handy when loading bigger image on tablets.
+  final String tabletPrefix;
+
   const CircularImage({
     super.key,
     this.borderColor = colorWhite,
     this.borderSize = 0,
     required this.radius,
     required this.imageURL,
+    this.tabletPrefix = "",
   });
 
   @override
@@ -43,12 +50,14 @@ class CircularImage extends StatelessWidget {
         ScreenSize.isTablet() ? tabletScaleFactor * radius : radius;
     double finalBordersize =
         ScreenSize.isTablet() ? tabletScaleFactor * borderSize : borderSize;
+    String finalImageURL = "$imageURL$tabletPrefix";
+
     return CircleAvatar(
       backgroundColor: borderColor,
       radius: finalRadius,
       child: CircleAvatar(
         radius: finalRadius - finalBordersize,
-        backgroundImage: NetworkImage(imageURL),
+        backgroundImage: NetworkImage(finalImageURL),
       ),
     );
   }
