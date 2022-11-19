@@ -9,8 +9,11 @@ import 'package:uikit/utils/settings.dart';
 /// border to the avatar. The borderSize is inclusive of the
 /// size provided.
 ///
+/// The image scales according to the scale factor specified in the
+/// settings.
+///
 /// ```dart
-/// CircularImage(imageURL: "http://ecastar.png", radius: 60),
+/// CircularImage(imageURL: "http://ecastar.png", radius: 60, borderSize: 5),
 /// ```
 ///
 class CircularImage extends StatelessWidget {
