@@ -32,7 +32,7 @@ class ImageBadge extends StatelessWidget {
 
   /// A callback that will be triggred when this UI is tapped.
   ///
-  /// If this has not been provided then it will not listent for
+  /// If this has not been provided then it will not listen for
   /// gestures.
   final VoidCallback? onTap;
 
