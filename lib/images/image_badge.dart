@@ -29,6 +29,13 @@ class ImageBadge extends StatelessWidget {
 
   /// The size of the text in the dp.
   final double valueSize;
+
+  /// A callback that will be triggred when this UI is tapped.
+  ///
+  /// If this has not been provided then it will not listent for
+  /// gestures.
+  final VoidCallback? onTap;
+
   const ImageBadge({
     Key? key,
     required this.imageName,
@@ -36,6 +43,7 @@ class ImageBadge extends StatelessWidget {
     this.imageHeight = 30,
     this.valueSize = baseFontSizeSmall,
     this.valueColor = colorWhite,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -45,40 +53,55 @@ class ImageBadge extends StatelessWidget {
     double minWidth = ScreenSize.isTablet() ? tabletScaleFactor * 70 : 70;
     double sizedBoxHeight =
         ScreenSize.isTablet() ? tabletScaleFactor * imageHeight : imageHeight;
-    return SizedBox(
-      height: sizedBoxHeight,
-      child: Stack(children: <Widget>[
-        Align(
-          alignment: Alignment.center,
-          child: Container(
-            constraints: BoxConstraints(minWidth: minWidth),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [colorDark, colorDarkTranslucent],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [0.0, 0.1],
-                tileMode: TileMode.clamp,
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+    if (onTap == null) {
+      return SizedBox(
+        height: sizedBoxHeight,
+        child: getInnerContent(padding, borderRadius, minWidth, sizedBoxHeight),
+      );
+    } else {
+      return SizedBox(
+        height: sizedBoxHeight,
+        child: GestureDetector(
+            onTap: onTap,
+            child: getInnerContent(
+                padding, borderRadius, minWidth, sizedBoxHeight)),
+      );
+    }
+  }
+
+  Widget getInnerContent(double padding, double borderRadius, double minWidth,
+      double sizedBoxHeight) {
+    return Stack(children: <Widget>[
+      Align(
+        alignment: Alignment.center,
+        child: Container(
+          constraints: BoxConstraints(minWidth: minWidth),
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [colorDark, colorDarkTranslucent],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.0, 0.1],
+              tileMode: TileMode.clamp,
             ),
-            padding: EdgeInsets.fromLTRB(
-                sizedBoxHeight + padding, padding, padding * 2, padding),
-            child: FlatText(
-              value,
-              size: valueSize,
-              color: valueColor,
-              fontWeight: FontWeight.bold,
-              textAlign: TextAlign.end,
-            ),
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+          ),
+          padding: EdgeInsets.fromLTRB(
+              sizedBoxHeight + padding, padding, padding * 2, padding),
+          child: FlatText(
+            value,
+            size: valueSize,
+            color: valueColor,
+            fontWeight: FontWeight.bold,
+            textAlign: TextAlign.end,
           ),
         ),
-        FlatImage(
-          name: imageName,
-          width: imageHeight,
-          height: imageHeight,
-        ),
-      ]),
-    );
+      ),
+      FlatImage(
+        name: imageName,
+        width: imageHeight,
+        height: imageHeight,
+      ),
+    ]);
   }
 }
