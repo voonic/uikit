@@ -102,7 +102,10 @@ class RaisedButtons extends StatelessWidget {
       disabled: disabled,
       height: calculateHeight,
       borderRadius: calculateHeight / 2,
-      onTap: onTap,
+      onTap: (next) {
+        onTap();
+        next();
+      },
       child: child,
     );
   }
