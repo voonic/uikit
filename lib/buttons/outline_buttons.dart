@@ -115,10 +115,7 @@ class OutlineButtons extends StatelessWidget {
         disabled: disabled,
         height: calculateHeight,
         borderRadius: calculateHeight / 2,
-        onTap: (next) {
-          onTap();
-          next();
-        },
+        onTap: onTap,
         child: child,
       ),
     );
