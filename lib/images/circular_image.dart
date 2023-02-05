@@ -74,7 +74,7 @@ class CircularImage extends StatelessWidget {
       radius: finalRadius,
       child: CircleAvatar(
         radius: finalRadius - finalBordersize,
-        backgroundImage: NetworkImage(finalImageURL),
+        foregroundImage: NetworkImage(finalImageURL),
       ),
     );
   }
