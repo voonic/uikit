@@ -8,9 +8,9 @@ const Color colorWarning = Color(0xFFfcb03c);
 const Color colorWarningDark = Color(0xFFf7931d);
 const Color colorWarningDarker = Color(0xFFf17624);
 
-const Color colorDanger = Color(0xFFfcb03c);
-const Color colorDangerDark = Color(0xFFf7931d);
-const Color colorDangerDarker = Color(0xFFf17624);
+const Color colorDanger = Color(0xFFe83966);
+const Color colorDangerDark = Color(0xFFcc2149);
+const Color colorDangerDarker = Color(0xFFcc2149);
 
 const Color colorSuccess = Color(0xFF00a99d);
 const Color colorSuccessDark = Color(0xFF01877a);
